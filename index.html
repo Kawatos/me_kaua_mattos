@@ -14,7 +14,7 @@
 
 
 <body style="transition: background-color 0.3s ease, color 0.3s ease; min-height: 75rem;">
-    <nav class="d-block navbar navbar-expand-md fixed-top" id="navbarTop">
+    <nav class="d-block navbar navbar-expand-md fixed-top bg-dark" id="navbarTop">
         <div class="container-fluid">
             <button class="navbar-toggler navbar-left" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -138,9 +138,11 @@
 
             htmlElement.setAttribute("data-bs-theme", newTheme);
 
+            var navTheme = (newTheme === 'light'? 'white' : 'dark');
+
             
-            navbar.classList.remove("bg-dark", "bg-light"); 
-            navbar.classList.add(`bg-${newTheme}`); 
+            navbar.classList.remove("bg-dark", "bg-white"); 
+            navbar.classList.add(`bg-${navTheme}`); 
 
             navbar.setAttribute("class", navbarColor)
             console.log(newThemeBR, 'BR')
