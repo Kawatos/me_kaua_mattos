@@ -14,17 +14,17 @@
 
 
 <body style="transition: background-color 0.3s ease, color 0.3s ease; min-height: 75rem;">
-    <nav class="d-block navbar navbar-expand-md fixed-top">
+    <nav class="d-block navbar navbar-expand-md fixed-top" id="navbarTop">
         <div class="container-fluid">
             <button class="navbar-toggler navbar-left" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <a href="#" class="navbar-brand" id="myportfolio"></a>
-            
-            
+
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -40,29 +40,67 @@
                     <li><button id="themeToggle" class="nav-link navbar-left"></button></li>
                 </ul>
             </div>
-           
-            
-            
-            
+
+
+
+
         </div>
     </nav>
 
-    <main class="section container">
+    <main class="container">
 
-        <div>
+        <div class="section">
             <h1>Navbar example</h1>
             <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll,
                 it will remain fixed to the top of your browser’s viewport.</p>
             <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
             <a href="moreinfo.html">Link para o alem</a>
         </div>
+        <div class="section">
+            <h1>Navbar example</h1>
+            <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll,
+                it will remain fixed to the top of your browser’s viewport.</p>
+            <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
+            <a href="moreinfo.html">Link para o alem</a>
+        </div>
+        <div class="section">
+            <h1>Navbar example</h1>
+            <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll,
+                it will remain fixed to the top of your browser’s viewport.</p>
+            <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
+            <a href="moreinfo.html">Link para o alem</a>
+        </div>
+        <div class="section">
+            <h1>Navbar example</h1>
+            <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll,
+                it will remain fixed to the top of your browser’s viewport.</p>
+            <a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs »</a>
+            <a href="moreinfo.html">Link para o alem</a>
+        </div>
+
     </main>
+
+
 
 
 </body>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+
+        const sections = document.querySelectorAll('.section');
+        console.log(sections);
+
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        });
 
 
         const htmlElement = document.documentElement;
@@ -83,30 +121,10 @@
                     <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
                     </svg>`;
 
-
-        const navbar = document.querySelector(".navbar");
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector("#navbarNav");
-
-        
-        navbarCollapse.addEventListener("show.bs.collapse", () => {
-            navbar.classList.add("navbar-open");
-            body.style.paddingTop = "1rem";
-            console.log("navbarCollapse foi exibida");
-        });
-
-        
-        navbarCollapse.addEventListener("hide.bs.collapse", () => {
-            navbar.classList.remove("navbar-open");
-            body.style.paddingTop = "0rem";
-            console.log("navbarCollapse foi ocultada");
-        });
-
-
-
         toggleButton.addEventListener("click", function () {
             const currentTheme = htmlElement.getAttribute("data-bs-theme");
             const newTheme = currentTheme === "dark" ? "light" : "dark";
+            const navbar = document.querySelector("#navbarTop");
             console.log(newTheme, 'newTheme')
 
             newThemeBR = newTheme === 'light' ? IconLight + " Modo claro" : IconDark + " Modo escuro";
@@ -120,6 +138,11 @@
 
             htmlElement.setAttribute("data-bs-theme", newTheme);
 
+            
+            navbar.classList.remove("bg-dark", "bg-light"); 
+            navbar.classList.add(`bg-${newTheme}`); 
+
+            navbar.setAttribute("class", navbarColor)
             console.log(newThemeBR, 'BR')
             console.log(newThemeUS, 'US')
             console.log(newThemeES, 'ES')

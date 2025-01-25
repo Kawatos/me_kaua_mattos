@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+body {
+    scroll-snap-type: y mandatory; /* Define rolagem obrigatória vertical */
+    overflow-y: scroll;
+    scroll-behavior: smooth; /* Transição suave ao rolar */
+  }
+
 .section {
     height: 100vh; /* Ocupa 100% da altura da viewport */
     width: 100%;    /* Ocupa 100% da largura */
@@ -14,8 +20,16 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.8s ease-in-out; /* Transição suave */
-  }
-  
+    transform: translateY(50px);
+}
+
+.section.visible {
+opacity: 1;
+transform: translateY(0); /* Fica estática */
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+ 
 
 
 
