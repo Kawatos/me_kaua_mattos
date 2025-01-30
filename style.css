@@ -27,7 +27,7 @@ body {
 
 .section {
     height: 100vh; /* Ocupa 100% da altura da viewport */
-    width: 100%;    /* Ocupa 100% da largura */
+    max-width: 100%;    /* Ocupa 100% da largura */
     display: flex;  /* Para centralizar o conteúdo */
     justify-content: center;
     align-items: center;
