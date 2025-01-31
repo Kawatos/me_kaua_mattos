@@ -12,33 +12,127 @@
         opacity: 0;
         scale: 0.5;
 
-    } to {
+    }
+
+    to {
         opacity: 1;
         scale: 1;
     }
-    
+
 }
 
+@keyframes colorChange {
+    0% {
+        color: #000000;
+    }
+
+    16% {
+        color: #0033cc;
+    }
+
+    33% {
+        color: #00ffcc;
+    }
+
+    49% {
+        color: #ff8800;
+    }
+
+    66% {
+        color: #cc0000;
+    }
+
+    83% {
+        color: #6600cc;
+    }
+
+    100% {
+        color: #000000;
+    }
+}
+
+
+
 body {
-    scroll-snap-type: y mandatory; /* Define rolagem obrigatória vertical */
+    scroll-snap-type: y mandatory;
+
     overflow-y: scroll;
-    scroll-behavior: smooth; /* Transição suave ao rolar */
-  }
+    scroll-behavior: smooth;
+
+}
+
+.color-animation {
+    animation: colorChange 4s infinite ease-in-out;
+    font-weight: bold;
+}
 
 .section {
-    height: 100vh; /* Ocupa 100% da altura da viewport */
-    max-width: 100%;    /* Ocupa 100% da largura */
-    display: flex;  /* Para centralizar o conteúdo */
+    height: 100vh;
+
+    max-width: 100%;
+
+    display: flex;
+
     justify-content: center;
     align-items: center;
 
     animation: appear linear;
-    animation-timeline: view() ;
+    animation-timeline: view();
     animation-range: entry 0 cover 40%;
-    
+
 }
 
+#imagempf {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+#iGitHub {
+    background-color: black;
+    border: 2px solid black;
+}
+
+#iGitHub:hover {
+    background-color: rgba(0, 0, 0, 0.781);
+
+}
+
+#HelloButtons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+
+}
+
+@media (max-width: 768px) {
+
+
+    #imagempf img {
+        max-width: 75%; /* Define o tamanho máximo */
+        height: auto; /* Mantém a proporção */
+    }
+
+    .section {
+        height: 100vh;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0 cover 40%;
+        flex-direction: column;
+    }
 
 
 
 
+
+
+}
