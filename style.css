@@ -114,7 +114,7 @@ body {
 
 
     #imagempf img {
-        max-width: 75%; /* Define o tamanho máximo */
+        max-width: 70%; /* Define o tamanho máximo */
         height: auto; /* Mantém a proporção */
     }
 
