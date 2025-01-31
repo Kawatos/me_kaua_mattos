@@ -90,6 +90,14 @@ body {
     align-content: center;
     flex-wrap: nowrap;
 }
+#imagemunissinos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
 
 #iGitHub {
     background-color: black;
@@ -98,7 +106,6 @@ body {
 
 #iGitHub:hover {
     background-color: rgba(0, 0, 0, 0.781);
-
 }
 
 #HelloButtons {
@@ -114,8 +121,15 @@ body {
 
 
     #imagempf img {
-        max-width: 70%; /* Define o tamanho máximo */
+        max-width: 100%; /* Define o tamanho máximo */
         height: auto; /* Mantém a proporção */
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+
+    #imagemunissinos {
+        max-width: 70%;
+        height: auto;
+        margin: 0 auto; 
     }
 
     .section {
@@ -130,9 +144,6 @@ body {
         flex-direction: column;
     }
 
-
-
-
-
+    
 
 }
