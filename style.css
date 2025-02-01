@@ -90,6 +90,7 @@ body {
     align-content: center;
     flex-wrap: nowrap;
 }
+
 #imagemunissinos {
     width: 100%;
     display: flex;
@@ -119,9 +120,30 @@ body {
 
 @media (max-width: 768px) {
 
+    .section {
+        height: 100vh;
+        
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0 cover 40%;
+        flex-direction: column;
+    }
+
+    .classText {
+        font-size: 1rem;
+    }
+
+    .classTitle {
+        font-size: 1.5rem;
+    }
+
 
     #imagempf img {
-        max-width: 100%; /* Define o tamanho máximo */
+        max-width: 70%; /* Define o tamanho máximo */
         height: auto; /* Mantém a proporção */
         margin: 0 auto; /* Centraliza a imagem */
     }
@@ -132,17 +154,8 @@ body {
         margin: 0 auto; 
     }
 
-    .section {
-        height: 100vh;
-        max-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: appear linear;
-        animation-timeline: view();
-        animation-range: entry 0 cover 40%;
-        flex-direction: column;
-    }
+
+
 
     
 
